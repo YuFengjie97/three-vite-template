@@ -6,11 +6,24 @@ import { pane } from '@/utils/pane';
 
 export function getRenderPipeline() {
 
+  // @range: { min: 0, max: 1, step: 0.01 }
+  const strength = uniform(.3)
+  // @range: { min: 0, max: 1, step: 0.01 }
+  const radius = uniform(.2)
+  // @range: { min: 0, max: 1, step: 0.01 }
+  const threshold = uniform(.8) 
+
   const renderPipeline = new THREE.RenderPipeline(renderer);
   const scenePass = pass(scene, camera);
   const scenePassColor = scenePass.getTextureNode("output");
-  const bloomPass = bloom(scenePassColor, .3, .2, .8);
+  const bloomPass = bloom(scenePassColor, strength.value, radius.value, threshold.value);
   renderPipeline.outputNode = scenePassColor.add(bloomPass);
+
+  bloomPass.strength = strength
+  bloomPass.radius = radius
+  bloomPass.threshold = threshold
+
+
 
   
   // const f = pane!.addFolder({title: 'bloom', expanded: false})
