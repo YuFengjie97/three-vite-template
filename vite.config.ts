@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
     plugins: [threeUniformGui({
       persistent: false, // Save configurations in localStorage
       devOnly: false, // Only active in development mode (default)
-      presets: false, // Enable the presets feature
+      presets: true, // Enable the presets feature
       draggable: true, // Make the panel draggable
     })],
 
