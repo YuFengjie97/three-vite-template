@@ -39,8 +39,8 @@ export async function initScene() {
   })
 
   function animate() {
-    control.update()
     timer.update()
+    control.update()
 
     emitter.emit('animate', {
       delta: timer.getDelta(),
