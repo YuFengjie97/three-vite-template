@@ -13,6 +13,8 @@ export async function initScene() {
   scene = new THREE.Scene()
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, .1, 1000)
 
+  if(!container) return
+
 
   renderer = new THREE.WebGPURenderer({ antialias: true })
   renderer.setPixelRatio(window.devicePixelRatio)
