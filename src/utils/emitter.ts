@@ -1,3 +1,10 @@
 import mitt from "mitt";
 
-export const emitter = mitt()
+type Events = {
+  animate: {
+    delta: number;
+    elapsed: number;  
+  };
+};
+
+export const emitter = mitt<Events>()
