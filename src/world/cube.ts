@@ -1,6 +1,6 @@
 import {scene} from './scene'
 import * as THREE from 'three/webgpu'
-import { ee } from '../utils/eventEmitter'
+import { emitter } from '../utils/emitter'
 import { Fn, mx_noise_vec3, positionLocal, time } from 'three/tsl'
 
 let geo: THREE.BoxGeometry
@@ -22,7 +22,7 @@ export function initCube(){
 
   scene.add(mesh)
 
-  ee.on('animate', ({delta}) => {
+  emitter.on('animate', ({delta}) => {
     mesh.rotation.x += delta * 2
     mesh.rotation.y += delta * 2
   })

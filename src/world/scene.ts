@@ -1,6 +1,6 @@
 import * as THREE from 'three/webgpu'
-import { ee } from '../utils/eventEmitter'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
+import {emitter} from '../utils/emitter'
 
 export let scene: THREE.Scene
 export let renderer: THREE.WebGPURenderer
@@ -40,7 +40,7 @@ export async function initScene() {
     control.update()
     timer.update()
 
-    ee.emit('animate', {
+    emitter.emit('animate', {
       delta: timer.getDelta(),
       elapsed: timer.getElapsed()
     })

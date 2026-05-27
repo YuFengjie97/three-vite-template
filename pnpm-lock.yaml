@@ -11,6 +11,9 @@ importers:
       '@types/three':
         specifier: ^0.184.1
         version: 0.184.1
+      mitt:
+        specifier: ^3.0.1
+        version: 3.0.1
       three:
         specifier: ^0.184.0
         version: 0.184.0
@@ -256,6 +259,9 @@ packages:
   meshoptimizer@1.1.1:
     resolution: {integrity: sha512-oRFNWJRDA/WTrVj7NWvqa5HqE1t9MYDj2VaWirQCzCCrAd2GHrqR/sQezCxiWATPNlKTcRaPRHPJwIRoPBAp5g==}
 
+  mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
+
   nanoid@3.3.12:
     resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -500,6 +506,8 @@ snapshots:
       lightningcss-win32-x64-msvc: 1.32.0
 
   meshoptimizer@1.1.1: {}
+
+  mitt@3.0.1: {}
 
   nanoid@3.3.12: {}
 
