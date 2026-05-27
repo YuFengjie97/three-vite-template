@@ -14,7 +14,7 @@ import {getEnvMap, getEnvMap2} from './world/skybox'
   const axesHelper = new THREE.AxesHelper(10)
   scene.add(axesHelper)
 
-  const envMap = getEnvMap2()
+  const envMap = getEnvMap()
   scene.environment = envMap
   scene.background = envMap
   scene.backgroundBlurriness = 0.5;
