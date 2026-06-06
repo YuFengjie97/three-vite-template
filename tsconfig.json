@@ -19,6 +19,9 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
 
+    "noImplicitAny": false,
+
+
     // 路径别名
     "paths": {
       "@/*": ["./src/*"],
