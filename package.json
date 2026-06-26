@@ -18,8 +18,8 @@
     "vite": "^8.0.12"
   },
   "dependencies": {
-    "@types/three": "^0.184.1",
+    "@types/three": "^0.185.0",
     "mitt": "^3.0.1",
-    "three": "^0.184.0"
+    "three": "^0.185.0"
   }
 }
