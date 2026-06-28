@@ -15,7 +15,7 @@ import { setLight } from './world/light'
   scene.add(axesHelper)
 
   setLight()
-  setEnv()
+  await setEnv()
 
   GlowCrystal()
 })()

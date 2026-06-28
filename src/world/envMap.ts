@@ -3,28 +3,28 @@ import * as THREE from 'three/webgpu'
 import {scene} from '@/world/scene'
 
 
-function getEnvHdr(){
+async function getEnvHdr(){
   const loader = new HDRLoader();
   const hdr = import.meta.env.BASE_URL + 'img/hdr/potsdamer_platz_1k.hdr'
-  const envMap = loader.load( hdr );
+  const envMap = await loader.loadAsync( hdr );
   envMap.mapping = THREE.EquirectangularReflectionMapping;
 
   return envMap
 }
 
 
-function getEnvCube(){
+async function getEnvCube(){
   console.log(import.meta.env.BASE_URL);
   const path = import.meta.env.BASE_URL + 'img/skybox/sky_12_cubemap_2k/'
   const loader = new THREE.CubeTextureLoader().setPath( path );
-  const cubeTexture = loader.load( [
+  const cubeTexture = await loader.loadAsync( [
     'px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'
   ] );
   return cubeTexture
 }
 
-export function setEnv(){
-  const envMap = getEnvCube()
+export async function setEnv(){
+  const envMap = await getEnvCube()
   // scene.environment = envMap
   scene.background = envMap
   scene.backgroundBlurriness = 0.4;
