@@ -2,6 +2,7 @@ import * as THREE from 'three/webgpu'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
 import {emitter} from '../utils/emitter'
 import { getRenderPipeline } from './webGpuEffect'
+import { uniform } from 'three/tsl'
 
 
 export let scene: THREE.Scene
@@ -9,6 +10,7 @@ export let renderer: THREE.WebGPURenderer
 export let camera: THREE.PerspectiveCamera
 export let timer: THREE.Timer
 export let control: OrbitControls
+export const uCameraPosition = uniform(new THREE.Vector3())
 
 export async function initScene() {
   const container = document.querySelector('#app')
@@ -51,6 +53,8 @@ export async function initScene() {
   function animate() {
     timer.update()
     control.update()
+    const [x,y,z] = camera.position.toArray()
+    uCameraPosition.value.set(x,y,z)
 
     emitter.emit('animate', {
       delta: timer.getDelta(),
